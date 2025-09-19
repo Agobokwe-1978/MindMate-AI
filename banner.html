@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMate AI Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', 'Arial', sans-serif;
+        }
+        
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation styling to match your site */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: linear-gradient(100deg, #60509d, #edddec);
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .logo {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo .brain-icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .nav_bar {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav_bar a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            padding: 8px 12px;
+            border-radius: 9px;
+        }
+        
+        .nav_bar a:hover {
+            color: #7658b2;
+            background-color: white;
+        }
+        
+        /* Banner styling - matches nav width */
+        .banner-ad {
+            width: 100%;
+            background: linear-gradient(100deg, #60509d, #edddec);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 5%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border-radius: 0 0 8px 8px;
+            margin-top: -1px; /* Connects with nav */
+        }
+        
+        .banner-content {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .banner-icon {
+            font-size: 42px;
+            margin-right: 20px;
+        }
+        
+        .banner-message {
+            flex-grow: 1;
+        }
+        
+        .banner-message h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .banner-message p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .banner-cta {
+            background: white;
+            color: #60509d;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+        
+        .banner-cta:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Animation for attention */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .banner-cta.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .banner-ad {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .banner-content {
+                flex-direction: column;
+                margin-bottom: 15px;
+            }
+            
+            .banner-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .banner-cta {
+                margin-left: 0;
+            }
+            
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav_bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <!-- Navigation matching your site -->
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <span class="brain-icon">🧠</span>
+                MindMate AI
+            </a>
+            <div class="nav_bar">
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="community.html">Community</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        
+        <!-- Banner that matches nav width -->
+        <div class="banner-ad">
+            <div class="banner-content">
+                <div class="banner-icon">🧠</div>
+                <div class="banner-message">
+                    <h2>Your AI Wellness Partner</h2>
+                    <p>Get 24/7 mental health support with our CBT-trained chatbot</p>
+                </div>
+            </div>
+            <a href="#" class="banner-cta pulse">Try Now - It's Free!</a>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive effect to CTA button
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.querySelector('.banner-cta');
+            
+            ctaButton.addEventListener('mouseenter', function() {
+                this.classList.remove('pulse');
+            });
+            
+            ctaButton.addEventListener('mouseleave', function() {
+                this.classList.add('pulse');
+            });
+            
+            // Simulate click effect
+            ctaButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    alert('Welcome to MindMate AI! You would be redirected to our signup page.');
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
